@@ -7,7 +7,7 @@ public class phone
 		System.out.println(number(str)[0]); // Вывод
 		System.out.println(number(str)[1]);
 		
-		/*(str = "+7 915 098 ()17 95"; 
+		/*str = "+7 915 098 ()17 9655"; 
 		number(str);
 		System.out.println(number(str)[0]);
 		System.out.println(number(str)[1]);*/
@@ -26,7 +26,7 @@ public class phone
 		}
 		if (arr[1].equals("")) // Если правок не было
 		{
-			arr[1] = "No changes;";
+			arr[1] = "No changes";
 		}
 		return arr;
 	}
@@ -36,24 +36,24 @@ public class phone
 		String buff; 						// замена прошла и нужно добавить коммент об этом.
 		String buff_2; // Буферные строки для сравнения исходного номера и измененного
 
-		buff = arr[0].replace("+7", "8");
+		buff = arr[0];
+		arr[0] = arr[0].replace("+7", "8");
 		if (!(buff.equals(arr[0])))
 		{
-			arr[0] = arr[0].replace("+7", "8");
 			arr[1] = "Change +7 to 8; ";
 		}
-		buff = arr[0].replace(" ", "");
+		buff = arr[0];
+		arr[0] = arr[0].replace(" ", "");
 		if (!(buff.equals(arr[0])))
 		{
-			arr[0] = arr[0].replace(" ", "");
 			arr[1] = arr[1] + "Spaces in the number; ";
 		}
-		buff = arr[0].replace(")", "");
-		buff_2 = arr[0].replace("(", "");
+		buff = arr[0];
+		buff_2 = arr[0];
+		arr[0] = arr[0].replace(")", "");
+		arr[0] = arr[0].replace("(", "");
 		if (!((buff.equals(arr[0])) || (buff_2.equals(arr[0]))))
 		{
-			arr[0] = arr[0].replace(")", "");
-			arr[0] = arr[0].replace("(", "");
 			arr[1] = arr[1] + "Braces in the number; ";
 		}
 	}
